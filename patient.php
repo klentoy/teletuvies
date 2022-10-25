@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TelevisitMD | Patient</title>
+    <title>TelevisitMD | Dashboard</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
@@ -26,10 +26,10 @@
 <body>
     <!-- Start your project here-->
     <!--Main Navigation-->
-    <?php include 'layouts/header.php'; ?>
+    <?php include 'layouts/header-with-sidebar.php'; ?>
 
     <!--Main layout-->
-    <div class="main-layout">
+    <main class="main-layout">
         <div class="container-fluid pb-4">
             <div class="row">
                 <div class="col-md-12 px-3 mt-10 pt-4 pb-4">
@@ -201,7 +201,7 @@
             </div>
         </div>
 
-    </div> <!-- .main-layout -->
+</main> <!-- .main-layout -->
 
     <!-- End your project here-->
 

@@ -58,10 +58,10 @@ $root .= '://' . $_SERVER['HTTP_HOST'];
 
             <ul id="sidebarMenu2" class="nav navbar-nav nav-flex-icons mr-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
+                    <a href="home.php" class="nav-link active"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Patients</span></a>
+                    <a href="patient.php" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Patients</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Consults</span></a>

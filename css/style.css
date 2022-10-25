@@ -15,7 +15,8 @@ nav.navbar.second-navbar {
 }
 
 @media (min-width: 991.98px) {
-  main {
+  header.with-sidebar .second-navbar,
+  main.main-layout {
     padding-left: 240px;
   }
 }
@@ -182,4 +183,20 @@ nav#main-navbar {
   font-size: 18px;
   line-height: 22px;
   color: #333333;
+}
+
+th{
+  cursor: pointer;
+}
+th.sorting_desc:after,
+th.sorting_asc:after {
+  font-family: 'Material Symbols Rounded';
+  color: #427CD8;
+  padding: 0px 5px;
+}
+th.sorting_asc:after {
+  content: "\e5d8";
+}
+th.sorting_desc:after {
+  content: "\e5db";
 }
