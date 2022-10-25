@@ -20,6 +20,11 @@ nav.navbar.second-navbar {
   }
 }
 
+
+.main-layout {
+  padding: 0.5rem 1rem;
+}
+
 /* Sidebar */
 .sidebar {
   position: fixed;
@@ -169,5 +174,12 @@ nav#main-navbar {
 .card-footer *{
   font-size: 14px;
   font-weight: 700;
+  color: #333333;
+}
+
+.section-title{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
   color: #333333;
 }
