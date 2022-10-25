@@ -31,7 +31,9 @@
     <!--Main layout-->
     <div class="container-fluid">
         <div class="row">
-            <h4>State List</h4>
+            <div class="col-md-12 px-3 mt-10 pt-4 pb-4">
+                <h4>State List</h4>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-3">
