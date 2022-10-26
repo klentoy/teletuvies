@@ -62,7 +62,7 @@
             </button>
             <ul id="sidebarMenu2" class="nav navbar-nav nav-flex-icons mr-auto">
                 <li class="nav-item">
-                    <a href="home.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'home.php' ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
+                    <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="patient.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'patient.php' ? 'active': ''; ?>"><span
