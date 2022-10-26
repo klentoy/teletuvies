@@ -200,3 +200,11 @@ th.sorting_asc:after {
 th.sorting_desc:after {
   content: "\e5db";
 }
+
+.with-sidebar nav#main-navbar {
+  z-index: 1;
+}
+
+.with-sidebar #sidebarMenu{
+  padding-top: 0;
+}
