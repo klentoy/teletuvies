@@ -58,10 +58,10 @@ $root .= '://' . $_SERVER['HTTP_HOST'];
 
             <ul id="sidebarMenu2" class="nav navbar-nav nav-flex-icons mr-auto">
                 <li class="nav-item">
-                    <a href="home.php" class="nav-link active"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
+                    <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="patient.php" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Patients</span></a>
+                    <a href="patient.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'patient.php' || basename($_SERVER['PHP_SELF']) == 'update-patient.php') ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Patients</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Consults</span></a>

@@ -2,7 +2,7 @@ body {
   background-color: #fbfbfb;
 }
 
-h1, h2, h3, h4, p, a, li, label, th{ 
+*, h1, h2, h3, h4, p, a, li, label, th{ 
   font-family: 'montserrat', 'Roboto', sans-serif !important;
 }
 
@@ -127,7 +127,7 @@ nav#main-navbar {
 }
 
 .card{
-  border-radius: 12px;
+  /* border-radius: 12px; */
   border: 1px solid #DDDDDD;
 }
 

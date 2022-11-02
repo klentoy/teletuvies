@@ -9,10 +9,19 @@
     <!-- Sidebar -->
 
     <!-- Navbar -->
-    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-mdb-mode="side" data-mdb-content="#content">
+    <button
+          id="toggler"
+          class="btn btn-dark mt-5"
+          data-toggle="sidenav"
+          data-target="#main-navbar"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
         <!-- Container wrapper -->
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+            <button type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
                 aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
