@@ -2,8 +2,14 @@ body {
   background-color: #fbfbfb;
 }
 
-*, h1, h2, h3, h4, p, a, li, label, th{ 
+body, h1, h2, h3, h4, p, a, li, label, th, button, input, optgroup, select, textarea{ 
   font-family: 'montserrat', 'Roboto', sans-serif !important;
+}
+
+input[type="text"]{
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -21,6 +27,9 @@ nav.navbar.second-navbar {
   }
 }
 
+.d-none{
+  display: none;
+}
 
 .main-layout {
   padding: 0.5rem 1rem;
