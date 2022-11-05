@@ -27,7 +27,7 @@ $(document).ready(function () {
         serverSide: true,
         loading: true,
         ajax: {
-            'url': "http://teletuvies.test:8080/api_grab.php",
+            'url':  window.location.protocol + "://" + window.location.host + "/api_grab.php",
             'type': 'GET',
             'data': function (data) {
                 var filter_state = $('input:checkbox[name="state"]:checked').map(function() {
