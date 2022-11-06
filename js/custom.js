@@ -33,13 +33,15 @@ $(document).ready(function () {
                 var filter_state = $('input:checkbox[name="state"]:checked').map(function() {
                     return this.value;
                 }).get().join('|');
+                data.action = '_get_patients';
                 data.filter_state = filter_state; 
             }
         },
         columns: [
             { "data": "Active",     
             render: function ( data, type, full ) {
-                return'<a href="update-patient.php?user_id='+ full.userId +'" type="button" class="btn btn-link">Update</a><a type="button" class="btn btn-link" data-toggle="modal" data-target="update">Create a Consult</a>';
+                return'<a href="update-patient.php?user_id='+ full.userId +'" type="button" class="btn btn-link">Update</a>' +
+                '<a href="create-consult.php?user_id='+ full.userId +'" type="button" class="btn btn-link">Create a Consult</a>';
             } },
             { "data": "userId" },
             { "data": "Name" },

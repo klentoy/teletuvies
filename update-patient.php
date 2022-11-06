@@ -24,7 +24,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-
+    <style>
+        .sticky-top {
+            top: 110px;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,17 +41,17 @@
         <div class="container-fluid pb-4">
             <div class="row">
                 <div class="col-md-3 px-3 mt-10 pt-4 pb-4">
-                    <div class="card">
+                    <div class="card sticky-top">
                         <ul class="list-group list-group-light">
-                            <li class="list-group-item px-3 border-0 fw-bold fs-6">Patient Demographics</li>
-                            <li class="list-group-item px-3 border-0 fw-bold fs-6">Insurance Information</li>
-                            <li class="list-group-item px-3 border-0 fw-bold fs-6">Medical History Questionnaire</li>
+                            <li class="list-group-item px-3 border-0 fw-bold fs-6"><a href="#section-patient-demographics">Patient Demographics</a></li>
+                            <li class="list-group-item px-3 border-0 fw-bold fs-6"><a href="#section-insurance-information">Insurance Information</a></li>
+                            <li class="list-group-item px-3 border-0 fw-bold fs-6"><a href="#medical-history-questionnaire">Medical History Questionnaire</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-7 px-3 mt-10 pt-4 pb-4">
                     <!-- Patient Demographics -->
-                    <div class="row pb-5">
+                    <div id="section-patient-demographics" class="row pb-5">
                         <div class="col-md-12">
                             <h4 class="section-title">Patient Demographics</h4>
                             <div class="card">
@@ -164,7 +168,7 @@
                     <!-- Patient Demographics -->
 
                     <!-- Insurance Information -->
-                    <div class="row pb-5">
+                    <div id="section-insurance-information" class="row pb-5">
                         <div class="col-md-12">
                             <h4 class="section-title">Insurance Information</h4>
                             <div class="card">
@@ -396,7 +400,7 @@
                     <!-- Insurance Information -->
 
                     <!-- Medical History Questionnaire -->
-                    <div class="row pb-5">
+                    <div id="medical-history-questionnaire" class="row pb-5">
                         <div class="col-md-12">
                             <h4 class="section-title">Medical History Questionnaire</h4>
                             <div class="card">
