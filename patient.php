@@ -35,8 +35,12 @@
     <main class="main-layout">
         <div class="container-fluid pb-4">
             <div class="row">
-                <div class="col-md-12 px-3 mt-10 pt-4 pb-4">
+                <div class="col-md-6 px-3 mt-10 pt-4 pb-4">
                     <h4 class="section-title">State List</h4>
+                </div>
+                <div class="col-md-6 px-3 mt-10 pt-4 pb-4 text-end">
+                    <button type="button" class="btn btn-success"> Add patient </button>
+                    <button type="button" class="btn btn-primary"> Create a consult </button>
                 </div>
             </div>
             <div class="row">

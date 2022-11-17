@@ -205,20 +205,61 @@ function toggleFieldOnBlur(thisField, secondary = false) {
 }
 
 function getPatients() {
-    $('#ptName').autoComplete({
-        resolver: 'custom',
-        events: {
-            search: function (label, callback) {
-                // let's do a custom ajax call
-                $.ajax(
-                    'mock_data/patients.json',
-                    {
-                        data: { 'label': label}
-                    }
-                ).done(function (res) {
-                    callback(res.results)
-                });
-            }
+    // $('#ptName').autocomplete({
+    //     resolver: 'custom',
+    //     events: {
+    //         search: function (qry, callback) {
+    //             // let's do a custom ajax call
+    //             $.ajax({
+    //                 url: 'mock_data/patients.json',
+    //                 dataType: "json",
+    //                 data: {
+    //                     'label': qry.label
+    //                 }
+    //             }).done(function (res) {
+    //                 console.log(res);
+    //             });
+    //         }
+    //     }
+    // });
+
+    $('#ptName').on('input keyup', function () {
+        var query = $(this).val();
+        if (query.length > 2) {
+            $.ajax({
+                url: "mock_data/patients.json",
+                data: query,
+                dataType: "json",
+                cache: false,
+                processData: false,
+                type: "GET",
+                success: function (data) {
+                    $('#ptName').autocomplete({
+                        source: data.label,
+                        maximumItems: 10,
+                        treshold: 2
+                    });
+                }
+            });
         }
+
     });
+
+
+    // var src = {
+    //     "Bootstrap 4 Autocomplete example": 1,
+    //     "Best example in the world": 2,
+    //     "Bootstrap 4 Autocomplete is very nice": 3,
+    //     "It contains neatly arranged example items": 4,
+    //     "With many autocomplete values": 5,
+    //     "And it uses default Bootstrap 4 components": 6,
+    //     "You can use this example to test": 7,
+    // }
+
+    // $('#ptName').autocomplete({
+    //     source: src,
+    //     highlightClass: 'text-danger',
+    //     treshold: 2,
+    // });
+
 }

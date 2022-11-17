@@ -53,7 +53,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="ptName">Patient *</label>
-                                                <input id="ptName" name="ptName" type="text" class="form-control" required="required" autocomplete="off">
+                                                <input id="ptName" name="ptName" type="text" class="form-control basicAutoComplete"  autocomplete="off"  required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
 
     <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous"></script>
 
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript" src="js/custom.js"></script>

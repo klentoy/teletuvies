@@ -20,7 +20,7 @@ function get_patient() {
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => 'start='.$  .'&length='.$len,
+    CURLOPT_POSTFIELDS => 'start='.$start .'&length='.$len,
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/x-www-form-urlencoded',
       'Cookie: PHPSESSID=a1ad70678a4c85365a53065d2cc98aeb'

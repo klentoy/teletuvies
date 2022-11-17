@@ -361,3 +361,7 @@ ul.pagination {
 .pagination .paginate_button a {
   font-size: 14px;
 }
+
+#stateList label.form-check-label {
+  font-size: 14px;
+}
