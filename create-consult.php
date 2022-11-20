@@ -53,7 +53,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="ptName">Patient *</label>
-                                                <input id="ptName" name="ptName" type="text" class="form-control basicAutoComplete"  autocomplete="off"  required="required">
+                                                <input disabled id="ptName" name="ptName" type="text" class="form-control basicAutoComplete"  autocomplete="off"  required="required">
                                             </div>
                                         </div>
                                     </div>

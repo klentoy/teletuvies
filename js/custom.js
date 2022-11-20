@@ -38,19 +38,26 @@ $(document).ready(function () {
                 data.filter_state = filter_state;
             }
         },
-        columns: [
-            {
+        columns: [{
                 "data": "Active",
                 render: function (data, type, full) {
                     return '<a href="update-patient.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Update</a>' +
                         '<a href="create-consult.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Create a Consult</a>';
                 }
             },
-            { "data": "userId" },
-            { "data": "Name" },
-            { "data": "State" },
+            {
+                "data": "userId"
+            },
+            {
+                "data": "Name"
+            },
+            {
+                "data": "State"
+            },
         ],
-        "order": [[1, "desc"]],
+        "order": [
+            [1, "desc"]
+        ],
 
     });
 
@@ -181,6 +188,7 @@ function toggleField(thisField, secondary = false) {
         }
     }
 }
+
 function toggleFieldOnBlur(thisField, secondary = false) {
     var showField = thisField.previousElementSibling;
     showField.value = '';
@@ -205,61 +213,37 @@ function toggleFieldOnBlur(thisField, secondary = false) {
 }
 
 function getPatients() {
-    // $('#ptName').autocomplete({
-    //     resolver: 'custom',
-    //     events: {
-    //         search: function (qry, callback) {
-    //             // let's do a custom ajax call
-    //             $.ajax({
-    //                 url: 'mock_data/patients.json',
-    //                 dataType: "json",
-    //                 data: {
-    //                     'label': qry.label
-    //                 }
-    //             }).done(function (res) {
-    //                 console.log(res);
-    //             });
-    //         }
-    //     }
-    // });
+    $.ajax(window.location.protocol + "//" + window.location.host + '/mock_data/patients.json').then((data) => { 
+        var patient_obj = {};
+        data.forEach(e => {
+            patient_obj[e.label] = e.value
+        });
 
-    $('#ptName').on('input keyup', function () {
-        var query = $(this).val();
-        if (query.length > 2) {
-            $.ajax({
-                url: "mock_data/patients.json",
-                data: query,
-                dataType: "json",
-                cache: false,
-                processData: false,
-                type: "GET",
-                success: function (data) {
-                    $('#ptName').autocomplete({
-                        source: data.label,
-                        maximumItems: 10,
-                        treshold: 2
-                    });
-                }
-            });
-        }
+        $('#ptName').prop("disabled", false);
 
+        $('#ptName').autocomplete({ 
+            source: patient_obj,
+            onSelectItem: function (selected, val){
+                console.log(selected, val);
+                $('#ptName').dropdown('close');
+            },
+            dropdownOptions: function () {
+            }
+         })
     });
+}
 
+const debounce = (func, delay, {
+    leading
+} = {}) => {
+    let timerId
 
-    // var src = {
-    //     "Bootstrap 4 Autocomplete example": 1,
-    //     "Best example in the world": 2,
-    //     "Bootstrap 4 Autocomplete is very nice": 3,
-    //     "It contains neatly arranged example items": 4,
-    //     "With many autocomplete values": 5,
-    //     "And it uses default Bootstrap 4 components": 6,
-    //     "You can use this example to test": 7,
-    // }
+    return (...args) => {
+        if (!timerId && leading) {
+            func(...args)
+        }
+        clearTimeout(timerId)
 
-    // $('#ptName').autocomplete({
-    //     source: src,
-    //     highlightClass: 'text-danger',
-    //     treshold: 2,
-    // });
-
+        timerId = setTimeout(() => func(...args), delay)
+    }
 }
