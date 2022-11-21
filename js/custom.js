@@ -218,14 +218,12 @@ function getPatients() {
         data.forEach(e => {
             patient_obj[e.label] = e.value
         });
-
-        $('#ptName').prop("disabled", false);
-
         $('#ptName').autocomplete({ 
             source: patient_obj,
             onSelectItem: function (selected, val){
-                console.log(selected, val);
-                $('#ptName').dropdown('close');
+                $('#ptName').dropdown('hide');
+                console.log(selected.value)
+                $('#ptUserId').val(selected.value);
             },
             dropdownOptions: function () {
             }

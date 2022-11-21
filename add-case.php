@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-md-3 px-3 mt-10 pt-4 pb-4"></div>
                 <div class="col-md-7 px-3 mt-10 pt-4 pb-4">
-                    <form action="add-case.php">
+                    <form action="">
                         <!-- Create a Consult -->
                         <div id="section-patient-demographics" class="row pb-5">
                             <div class="col-md-12">
@@ -52,17 +52,26 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="ptName">Patient *</label>
-                                                    <input value="" id="ptName" name="ptName" type="text" class="form-control basicAutoComplete" autocomplete="off"
-                                                        required="required">
-                                                    <input type="hidden" name="ptUserId" id="ptUserId" value="0">
+                                                    <label for="ptName">Chief Complaints *</label>
+                                                    <select class="select" multiple data-mdb-filter="true">
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                        <option value="4">Four</option>
+                                                        <option value="5">Five</option>
+                                                        <option value="6">Six</option>
+                                                        <option value="7">Seven</option>
+                                                        <option value="8">Eight</option>
+                                                        <option value="9">Nine</option>
+                                                        <option value="10">Ten</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
-                                                    <label for="supplierCode">Supplier Code *</label>
+                                                    <label for="supplierCode">Supplier Code</label>
                                                     <input id="supplierCode" name="supplierCode" type="text" class="form-control" required="required">
                                                 </div>
                                             </div>
@@ -111,6 +120,8 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+
+    <script type="text/javascript" src="src/js/bootstrap/dist/dropdown.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-4-autocomplete/dist/bootstrap-4-autocomplete.min.js" crossorigin="anonymous"></script>
 
