@@ -79,6 +79,7 @@
 
     <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
 
+    <script src="//cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript" src="js/custom.js"></script>

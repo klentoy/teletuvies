@@ -580,3 +580,13 @@ ul.pagination {
 .steps-form-3 .steps-row-3 .steps-step-3 .btn-circle-3 .fa {
   font-size: 1.7rem;
 }
+
+
+.choices__list--dropdown{ z-index: 5 !important;}
+.choices__inner {
+  background: #fff !important;
+}
+
+input.choices__input.choices__input--cloned {
+  border: none;
+}
