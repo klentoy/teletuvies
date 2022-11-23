@@ -26,6 +26,15 @@ input[type="text"] {
   border-radius: 4px;
 }
 
+.custom-select,
+input,
+label{
+  font-size: 14px !important;
+}
+.form-check-inline .form-check-input[type=radio]:checked {
+  position: relative;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 1);
 }
@@ -590,3 +599,4 @@ ul.pagination {
 input.choices__input.choices__input--cloned {
   border: none;
 }
+

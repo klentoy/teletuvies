@@ -4,17 +4,9 @@
 // var sideNavScrollbar = document.querySelector('.custom-scrollbar');
 // Ps.initialize(sideNavScrollbar);
 
-
+var patient_questions = [];
 
 $(document).ready(function () {
-    var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
-        removeItemButton: true,
-        maxItemCount:5,
-        searchResultLimit:5,
-        renderChoiceLimit:5
-    }); 
-     
-
     $('#table1').DataTable({
         "paging": false,
         "searching": false,
@@ -47,21 +39,21 @@ $(document).ready(function () {
             }
         },
         columns: [{
-                "data": "Active",
-                render: function (data, type, full) {
-                    return '<a href="update-patient.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Update</a>' +
-                        '<a href="create-consult.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Create a Consult</a>';
-                }
-            },
-            {
-                "data": "userId"
-            },
-            {
-                "data": "Name"
-            },
-            {
-                "data": "State"
-            },
+            "data": "Active",
+            render: function (data, type, full) {
+                return '<a href="update-patient.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Update</a>' +
+                    '<a href="create-consult.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Create a Consult</a>';
+            }
+        },
+        {
+            "data": "userId"
+        },
+        {
+            "data": "Name"
+        },
+        {
+            "data": "State"
+        },
         ],
         "order": [
             [1, "desc"]
@@ -72,6 +64,8 @@ $(document).ready(function () {
     patients_insurance_form();
     patients_secondary_insurance_form();
     getPatients();
+
+    addCaseFuncs();
 });
 
 function patients_insurance_form() {
@@ -221,23 +215,68 @@ function toggleFieldOnBlur(thisField, secondary = false) {
 }
 
 function getPatients() {
-    $.ajax(window.location.protocol + "//" + window.location.host + '/mock_data/patients.json').then((data) => { 
+    $.ajax(window.location.protocol + "//" + window.location.host + '/mock_data/patients.json').then((data) => {
         var patient_obj = {};
         data.forEach(e => {
             patient_obj[e.label] = e.value
         });
-        $('#ptName').autocomplete({ 
+        $('#ptName').autocomplete({
             source: patient_obj,
-            onSelectItem: function (selected, val){
+            onSelectItem: function (selected, val) {
                 $('#ptName').dropdown('hide');
                 console.log(selected.value)
                 $('#ptUserId').val(selected.value);
             },
             dropdownOptions: function () {
             }
-         })
+        })
     });
 }
+
+function addCaseFuncs() {
+    if (typeof Choices !== "undefined") {
+        var chiefComplaints = new Choices('#choices-multiple-remove-button', {
+            removeItemButton: true, 
+            shouldSort: false
+        });
+        var multipleCancelButton = new Choices('.choices-multiple', {
+            removeItemButton: true,
+        });
+
+        var questions = [];
+
+        chiefComplaints.passedElement.element.addEventListener(
+            'addItem',
+            function (event) {
+                // questions_sections("value of dropdown", "show section to the page; true|false")
+                questions_sections(event.detail.label, true);
+            },
+            false,
+        );
+        chiefComplaints.passedElement.element.addEventListener(
+            'removeItem',
+            function (event) {
+                // questions_sections("value of dropdown", "show section to the page; true|false")
+                questions_sections(event.detail.label, false);
+            },
+            false,
+        );
+    }
+
+}
+function questions_sections(sectionId, show) {
+    sectionId = sectionId.replace(/\s+/g, '-').toLowerCase();
+    if ( show ){
+        patient_questions.push(sectionId);
+        $('#section-' + sectionId).fadeIn(500);
+    }else{
+        patient_questions = patient_questions.filter(e => e !== sectionId);
+        $('#section-' + sectionId).fadeOut(200);
+    }
+
+
+}
+
 
 const debounce = (func, delay, {
     leading
@@ -253,3 +292,4 @@ const debounce = (func, delay, {
         timerId = setTimeout(() => func(...args), delay)
     }
 }
+
