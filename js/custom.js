@@ -233,14 +233,30 @@ function getPatients() {
     });
 }
 
+function multiSelectPharmFormat(el) {
+    if (!el.id) { return el.text; }
+    var $state = $(
+        '<span><strong>' + $(el.element).attr('prescription') + '</strong> ' + el.text + '</span>'
+    );
+    return $state;
+}
+
 function addCaseFuncs() {
     if (typeof Choices !== "undefined") {
         var chiefComplaints = new Choices('#choices-multiple-remove-button', {
-            removeItemButton: true, 
+            removeItemButton: true,
             shouldSort: false
         });
-        var multipleCancelButton = new Choices('.choices-multiple', {
+        /*var multipleCancelButton = new Choices('.choices-multiple', {
             removeItemButton: true,
+            shouldSort: false,
+            allowHTML: true,
+        });*/
+
+        $('.choices-multiple').select2({
+            width: "100%",
+            templateResult: multiSelectPharmFormat,
+            templateSelection: multiSelectPharmFormat
         });
 
         var questions = [];
@@ -266,10 +282,10 @@ function addCaseFuncs() {
 }
 function questions_sections(sectionId, show) {
     sectionId = sectionId.replace(/\s+/g, '-').toLowerCase();
-    if ( show ){
+    if (show) {
         patient_questions.push(sectionId);
         $('#section-' + sectionId).fadeIn(500);
-    }else{
+    } else {
         patient_questions = patient_questions.filter(e => e !== sectionId);
         $('#section-' + sectionId).fadeOut(200);
     }
