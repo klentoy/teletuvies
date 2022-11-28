@@ -225,7 +225,7 @@ th {
 }
 
 .filter-label a:after,
-h6.filter-label.filter-state:before,
+h6.filter-label:before,
 th.sorting_desc:after,
 th.sorting_asc:after {
   font-family: 'Material Symbols Rounded';
@@ -283,15 +283,18 @@ th.sorting_desc:after {
   content: "\e5cf";
 }
 
-.filter-state:before {}
 
-.state-list {
-  height: calc(100vh - 200px);
+.sidebar-scroller{
+  height: calc(100vh - 150px);
   padding-left: 20px;
   position: relative;
   margin-top: 0 !important;
   border-left: 1px solid #ddd;
   margin-left: 10px;
+}
+.sidebar-filter-list {
+  padding-bottom: 42.5px;
+
 }
 
 ul.states-list li {
@@ -301,6 +304,22 @@ ul.states-list li {
   font-size: 14px;
   line-height: 17px;
   color: #333333;
+}
+
+.filter-label.filter-state:before {
+  content: "\e567";
+  display: inline;
+  color: #D9D9D9 ! important;
+}
+.filter-label.filter-agent:before {
+  content: "\f0e2";
+  display: inline;
+  color: #D9D9D9 ! important;
+}
+.filter-label.filter-consult-status:before {
+  content: "\e6b3";
+  display: inline;
+  color: #D9D9D9 ! important;
 }
 
 .filter-label.filter-state:before {
@@ -600,3 +619,7 @@ input.choices__input.choices__input--cloned {
   border: none;
 }
 
+
+div#patients-table_info {
+  padding-top: 21px;
+}

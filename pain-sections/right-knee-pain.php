@@ -3,11 +3,17 @@
         <h4 class="section-title row pb-3 pl-2">Right Knee Exam Questions</h4>
         <div class="card">
             <div class="card-body">
-
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="KPrating">On a scale from 1 to 10 how bad is your pain? with 10 being the worst.</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="persistedKP">How long have you had this pain? When did it start?</label>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="KPrating">On a scale from 1 to 10 how bad is your pain? with 10 being the worst.</label>
                             <select name="KPrating" id="KPratingR" class="custom-select knee_valid" db-table="prod_left_knee" required="required">
                                 <option value="">Choose...</option>
                                 <option value="1 (Mild)">1 (Mild)</option>
@@ -25,7 +31,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="persistedKP">How long have you had this pain? When did it start?</label>
                             <select class="custom-select knee_valid" name="persistedKPR" id="persistedKP" required="required">
                                 <option value="">Choose...</option>
                                 <option value="0-1 year">0-1 year</option>

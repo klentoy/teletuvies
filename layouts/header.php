@@ -11,17 +11,15 @@ $root .= '://' . $_SERVER['HTTP_HOST'];
 
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                <img src="<?php echo $root; ?>/img/top-logo-main.png" height="35" alt="TelevisitMD Logo"
-                    loading="lazy" />
+                <img src="<?php echo $root; ?>/img/top-logo-main.png" height="35" alt="TelevisitMD Logo" loading="lazy" />
             </a>
             <!-- Right links -->
             <ul class="navbar-nav ms-auto d-flex flex-row">
                 <!-- Avatar -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link  hidden-arrow dropdown-toggle d-flex align-items-center" href="#"
-                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
-                            height="22" alt="Avatar" loading="lazy" />
+                    <a class="nav-link  hidden-arrow dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Avatar" loading="lazy" />
                         &nbsp;
                         Henry
                         &nbsp; <span class="material-symbols-rounded">expand_more</span>
@@ -46,25 +44,28 @@ $root .= '://' . $_SERVER['HTTP_HOST'];
     </nav>
     <!-- Navbar -->
 
-    <nav
-        class="navbar second-navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav navbar-light">
+    <nav class="navbar second-navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav navbar-light">
 
         <div class="container-fluid">
             <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu2"
-                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu2" aria-controls="sidebarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
             <ul id="sidebarMenu2" class="nav navbar-nav nav-flex-icons mr-auto">
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Home</span></a>
+                    <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active': ''; ?>"><span
+                            class="clearfix d-none d-sm-inline-block">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="patient.php" class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'patient.php' || basename($_SERVER['PHP_SELF']) == 'update-patient.php') ? 'active': ''; ?>"><span class="clearfix d-none d-sm-inline-block">Patients</span></a>
+                    <a href="patient.php"
+                        class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'patient.php' || basename($_SERVER['PHP_SELF']) == 'update-patient.php') ? 'active': ''; ?>"><span
+                            class="clearfix d-none d-sm-inline-block">Patients</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Consults</span></a>
+                    <a href="cases-consults.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'cases-consults.php' ? 'active': ''; ?>"><span
+                            class="clearfix d-none d-sm-inline-block">Consults</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><span class="clearfix d-none d-sm-inline-block">Tickets</span></a>

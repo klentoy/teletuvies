@@ -27,7 +27,7 @@
 <body>
     <!-- Start your project here-->
     <!--Main Navigation-->
-    <?php include 'layouts/header-with-sidebar-patient.php'; ?>
+    <?php include 'layouts/header-with-sidebar-consults.php'; ?>
 
     <!--Main layout-->
     <main class="main-layout">
@@ -89,6 +89,7 @@
     // Initialize the plugin
     const newScroll = document.querySelector('.sidebar-scroller');
     const ps = new PerfectScrollbar(newScroll);
+
 
     </script>
 

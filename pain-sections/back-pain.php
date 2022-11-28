@@ -5,9 +5,19 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
+                        <label for="">On a scale from 1 to 10 how bad is your pain? with 10
+                            being the worst.</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Is it the Lower back or the Upper back?</br />&nbsp;</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">How long have you had this pain? When did it start?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">On a scale from 1 to 10 how bad is your pain? with 10
-                                being the worst.</label>
                             <select name="ratingBP" id="ratingBP" class="custom-select back_valid" db-table="prod_back" required="required">
                                 <option value="">Choose...</option>
                                 <option value="1 (Mild)">1 (Mild)</option>
@@ -25,7 +35,6 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Is it the Lower back or the Upper back?</br />&nbsp;</label>
                             <select name="locationBP" id="locationBP" size="1" class="custom-select back_valid" db-table="prod_back" required="required">
                                 <option value="">Choose...</option>
                                 <option value="Lower Lumbar">Lower Lumbar</option>
@@ -35,7 +44,6 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">How long have you had this pain? When did it start?</label>
                             <select class="custom-select back_valid" db-table="prod_back" name="persistedBP" id="persistedBP" required="required">
                                 <option value="">Choose...</option>
                                 <option value="0-1 year">0-1 year</option>

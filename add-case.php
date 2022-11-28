@@ -114,42 +114,15 @@
                         <!-- #section-left-shoulder-pain -->
 
                         <!-- #section-right-shoulder-pain -->
-                        <div id="section-right-shoulder-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Right Shoulder Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Right shoulder here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/right-shoulder-pain.php'; ?>
                         <!-- #section-left-shoulder-pain -->
 
                         <!-- #section-left-ankle-pain -->
-                        <div id="section-left-ankle-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Left Ankle Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Left Ankle here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/left-ankle-pain.php'; ?>
                         <!-- #section-left-ankle-pain -->
 
                         <!-- #section-right-ankle-pain -->
-                        <div id="section-right-ankle-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Right Ankle Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Right Ankle here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/right-ankle-pain.php'; ?>
                         <!-- #section-right-ankle-pain -->
 
                         <!-- #section-left-wrist-pain -->
