@@ -110,16 +110,7 @@
                         <!-- #section-left-knee-pain -->
 
                         <!-- #section-left-shoulder-pain -->
-                        <div id="section-left-shoulder-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Left Shoulder Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Left Shoulder here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/left-shoulder-pain.php'; ?>
                         <!-- #section-left-shoulder-pain -->
 
                         <!-- #section-right-shoulder-pain -->
