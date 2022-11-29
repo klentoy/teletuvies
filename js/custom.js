@@ -14,6 +14,24 @@ $(document).ready(function () {
     });
     $('.dataTables_length').addClass('bs-select');
 
+    $('.datepicker').datepicker({
+        format: "mm-dd-yy"
+    });
+
+    load_patient_table();
+
+    patients_insurance_form();
+
+    patients_secondary_insurance_form();
+
+    getPatients();
+
+    addCaseFuncs();
+
+    consult_form();
+});
+
+function load_patient_table() {
     $('#patients-table').DataTable({
         paging: true,
         language: {
@@ -60,13 +78,7 @@ $(document).ready(function () {
         ],
 
     });
-
-    patients_insurance_form();
-    patients_secondary_insurance_form();
-    getPatients();
-
-    addCaseFuncs();
-});
+}
 
 function patients_insurance_form() {
     $('#privateInsurance, #medgroup, #rxBin').removeAttr('required');
@@ -266,6 +278,7 @@ function addCaseFuncs() {
             function (event) {
                 // questions_sections("value of dropdown", "show section to the page; true|false")
                 questions_sections(event.detail.label, true);
+                add_field_requirement();
             },
             false,
         );
@@ -274,12 +287,24 @@ function addCaseFuncs() {
             function (event) {
                 // questions_sections("value of dropdown", "show section to the page; true|false")
                 questions_sections(event.detail.label, false);
+                remove_field_requirement();
             },
             false,
         );
     }
 
 }
+
+function add_field_requirement() {
+    $('.required_field').prop('required', function () {
+        return $(this).is(':visible');
+    });
+}
+
+function remove_field_requirement() {
+    $('.required_field').prop('required', false);
+}
+
 function questions_sections(sectionId, show) {
     sectionId = sectionId.replace(/\s+/g, '-').toLowerCase();
     if (show) {
@@ -290,6 +315,39 @@ function questions_sections(sectionId, show) {
         $('#section-' + sectionId).fadeOut(200);
     }
 
+
+}
+
+function consult_form() {
+    $('#consult-form').on('submit', function () {
+        // do validation here
+        if ($('#choices-multiple-remove-button').val().length == 0) {
+            Swal.fire({
+                text: "Please select a complaint",
+                icon: 'error',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Okay'
+            })
+            $('.chief-complaints-box .choices__inner').addClass('focus-field');
+            setTimeout(() => {
+                $('.chief-complaints-box .choices__inner').removeClass('focus-field');
+            }, 3000);
+            return false;
+        }
+    });
+
+    $('.required_field:radio').click(function(){
+        var fieldValue = $(this).val();
+        var fieldName = $(this).attr("name");
+        if ( fieldValue == "Yes" ){
+            $('.' + fieldName + '_details').fadeIn();
+            add_field_requirement();
+        }else{
+            $('.' + fieldName + '_details').fadeOut();
+            remove_field_requirement();
+        }
+        
+    });
 
 }
 

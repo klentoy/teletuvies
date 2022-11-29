@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select name="ratingSPR" id="ratingSPR" class="custom-select shoulder_valid" db-table="prod_left_shoulder" required="required">
+                            <select name="ratingSPR" id="ratingSPR" class="custom-select required_field" db-table="prod_left_shoulder">
                                 <option value="">Choose...</option>
                                 <option value="1 (Mild)">1 (Mild)</option>
                                 <option value="2 (Mild)">2 (Mild)</option>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select class="custom-select shoulder_validR" db-table="prod_right_shoulder" name="persistedSPR" id="persistedSPR" required="required">
+                            <select class="custom-select required_field" db-table="prod_right_shoulder" name="persistedSPR" id="persistedSPR">
                                 <option value="">Choose...</option>
                                 <option value="0-1 year">0-1 year</option>
                                 <option value="1-2 years">1-2 years</option>
@@ -51,7 +51,7 @@
                             <span style="display: block; font-size:12px">Cause of the Shoulder Pain Specify 'In Detail'
                                 the cause of patient s pain (one word descriptions are not adequate, enter a narrative
                                 statement of the issues causing pain)</span>
-                            <textarea class="form-control" name="causeSPR" id="" cols="30" rows="10"></textarea>
+                            <textarea class="form-control required_field" name="causeSPR" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
@@ -59,11 +59,11 @@
                     <div class="col-md-12">
                         <label for="">Was there an Injury related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjurySPR" id="patientInjurySPR_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjurySPR" id="patientInjurySPR_yes" value="Yes" />
                             <label class="form-check-label" for="patientInjurySPR_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjurySPR" id="patientInjurySPR_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjurySPR" id="patientInjurySPR_no" value="No" />
                             <label class="form-check-label" for="patientInjurySPR_no">No</label>
                         </div>
                     </div>
@@ -72,11 +72,11 @@
                     <div class="col-md-12">
                         <label for="">Was there an Surgery related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgerySPR" id="surgerySPR_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgerySPR" id="surgerySPR_yes" value="Yes" />
                             <label class="form-check-label" for="surgerySPR_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgerySPR" id="surgerySPR_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgerySPR" id="surgerySPR_no" value="No" />
                             <label class="form-check-label" for="surgerySPR_no">No</label>
                         </div>
                     </div>
@@ -85,11 +85,11 @@
                     <div class="col-md-12">
                         <label for="">Is the pain Constant or does it Comes and go?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencySPR" id="frequencySPR_yes" value="constant" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencySPR" id="frequencySPR_yes" value="constant" />
                             <label class="form-check-label" for="frequencySPR_yes">constant</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencySPR" id="frequencySPR_no" value="intermittent" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencySPR" id="frequencySPR_no" value="intermittent" />
                             <label class="form-check-label" for="frequencySPR_no">intermittent</label>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ptName">What aggravates the pain? Bending, Walking, standing, Lifting?</label>
-                            <select name="aggravatesSPR[]" class="choices-multiple" placeholder="Can select multiple pains" multiple>
+                            <select name="aggravatesSPR[]" class="choices-multiple required_field" placeholder="Can select multiple pains" multiple>
                                 <option value="Bending">Bending</option>
                                 <option value="Standing">Standing</option>
                                 <option value="Walking">Walking</option>
@@ -115,7 +115,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ptName">What treatments have you tried to alleviate the pain?</label>
-                            <select name="treatmentsSPR[]" class="choices-multiple" placeholder="Can select multiple pain treatments" multiple>
+                            <select name="treatmentsSPR[]" class="choices-multiple required_field" placeholder="Can select multiple pain treatments" multiple>
                                 <option value="Over the counter medication">Over the counter medication</option>
                                 <option value="Prescription medication">Prescription medication</option>
                                 <option value="Physical therapy">Physical therapy</option>

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
+
     <style>
     .sticky-top {
         top: 110px;
@@ -43,7 +45,7 @@
             <div class="row">
                 <div class="col-md-3 px-3 mt-10 pt-4 pb-4"></div>
                 <div class="col-md-7 px-3 mt-10 pt-4 pb-4">
-                    <form action="">
+                    <form id="consult-form" action="">
                         <!-- Create a Consult -->
                         <div id="section-patient-demographics" class="row pb-5">
                             <div class="col-md-12">
@@ -52,10 +54,10 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group chief-complaints-box">
                                                     <label for="ptName">Chief Complaints *</label>
 
-                                                    <select id="choices-multiple-remove-button" placeholder="Can select multiple complaints" multiple>
+                                                    <select name="complaints" id="choices-multiple-remove-button" placeholder="Can select multiple complaints" multiple>
                                                         <option value="Back Pain">Back Pain</option>
                                                         <option value="Left Knee Pain">Left Knee Pain</option>
                                                         <option value="Right Knee Pain">Right Knee Pain</option>
@@ -105,7 +107,7 @@
                         <?php include 'pain-sections/left-knee-pain.php'; ?>
                         <!-- #section-left-knee-pain -->
 
-                        <!-- #section-right-knee-pain -->                        
+                        <!-- #section-right-knee-pain -->
                         <?php include 'pain-sections/right-knee-pain.php'; ?>
                         <!-- #section-left-knee-pain -->
 
@@ -259,8 +261,11 @@
     <script src="//cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript" src="js/custom.js"></script>

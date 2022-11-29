@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select name="KPrating" id="KPratingR" class="custom-select knee_valid" db-table="prod_left_knee" required="required">
+                            <select name="KPrating" id="KPratingR" class="custom-select required_field" db-table="prod_left_knee">
                                 <option value="">Choose...</option>
                                 <option value="1 (Mild)">1 (Mild)</option>
                                 <option value="2 (Mild)">2 (Mild)</option>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <select class="custom-select knee_valid" name="persistedKPR" id="persistedKP" required="required">
+                            <select class="custom-select required_field" name="persistedKPR" id="persistedKP">
                                 <option value="">Choose...</option>
                                 <option value="0-1 year">0-1 year</option>
                                 <option value="1-2 years">1-2 years</option>
@@ -52,7 +52,7 @@
                             <span style="display: block; font-size:12px">Cause of the Knee Pain Specify 'In Detail' the cause of patient's pain (one word descriptions are
                                 not
                                 adequate, enter a narrative statement of the issues causing pain)</span>
-                            <textarea class="form-control" name="causeKPR" id="" cols="30" rows="10"></textarea>
+                            <textarea class="form-control required_field" name="causeKPR" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@
                     <div class="col-md-12">
                         <label for="">Was there an Injury related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjuryKPR" id="patientInjuryKPR_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjuryKPR" id="patientInjuryKPR_yes" value="Yes" />
                             <label class="form-check-label" for="patientInjuryKPR_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjuryKPR" id="patientInjuryKPR_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjuryKPR" id="patientInjuryKPR_no" value="No" />
                             <label class="form-check-label" for="patientInjuryKPR_no">No</label>
                         </div>
                     </div>
@@ -77,11 +77,11 @@
                     <div class="col-md-12">
                         <label for="">Was there an Surgery related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgeryKPR" id="surgeryKPR_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgeryKPR" id="surgeryKPR_yes" value="Yes" />
                             <label class="form-check-label" for="surgeryKPR_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgeryKPR" id="surgeryKPR_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgeryKPR" id="surgeryKPR_no" value="No" />
                             <label class="form-check-label" for="surgeryKPR_no">No</label>
                         </div>
                     </div>
@@ -91,11 +91,11 @@
                     <div class="col-md-12">
                         <label for="">Is the pain Constant or does it Comes and goes?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencyKPR" id="frequencyKPR_yes" value="constant" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencyKPR" id="frequencyKPR_yes" value="constant" />
                             <label class="form-check-label" for="frequencyKPR_yes">constant</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencyKPR" id="frequencyKPR_no" value="intermittent" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencyKPR" id="frequencyKPR_no" value="intermittent" />
                             <label class="form-check-label" for="frequencyKPR_no">intermittent</label>
                         </div>
                     </div>
@@ -140,11 +140,11 @@
                     <div class="col-md-12">
                         <label for="">Do you feel any weakness in the knees?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="weaknessKPR" id="weaknessKPR_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="weaknessKPR" id="weaknessKPR_yes" value="Yes" />
                             <label class="form-check-label" for="weaknessKPR_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="weaknessKPR" id="weaknessKPR_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="weaknessKPR" id="weaknessKPR_no" value="No" />
                             <label class="form-check-label" for="weaknessKPR_no">No</label>
                         </div>
                     </div>
@@ -168,8 +168,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select name="PivotShiftTestright" id="PivotShiftTestright" db-table="prod_left_knee" class="custom-select knee_valid"
-                                        required="required">
+                                    <select name="PivotShiftTestright" id="PivotShiftTestright" db-table="prod_left_knee" class="custom-select required_field"
+                                    >
                                         <option value="">Please select</option>
                                         <option value="Positive">Positive</option>
                                         <option value="Negative">Negative</option>
@@ -203,8 +203,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select name="cabotmaneuverRight" id="cabotmaneuverRight" db-table="prod_left_knee" class="custom-select knee_valid"
-                                        required="required">
+                                    <select name="cabotmaneuverRight" id="cabotmaneuverRight" db-table="prod_left_knee" class="custom-select required_field"
+                                    >
                                         <option value="">Please select</option>
                                         <option value="Positive">Positive</option>
                                         <option value="Negative">Negative</option>
@@ -238,8 +238,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select id="oneleggedtestRight" name="oneleggedtestRight" db-table="prod_left_knee" class="custom-select knee_valid"
-                                        required="required">
+                                    <select id="oneleggedtestRight" name="oneleggedtestRight" db-table="prod_left_knee" class="custom-select required_field"
+                                    >
                                         <option value="">Please select</option>
                                         <option value="Positive">Positive</option>
                                         <option value="Negative">Negative</option>
@@ -260,15 +260,15 @@
                     <div class="col-md-12">
                         <label for="">Do you ever hear any Clicking, Grinding or Popping sounds in the knee?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="ClickingR" id="ClickingR" />
+                            <input class="form-check-input required_field" type="checkbox" value="ClickingR" id="ClickingR" />
                             <label class="form-check-label" for="ClickingR">Clicking</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="GrindingR" id="GrindingR" />
+                            <input class="form-check-input required_field" type="checkbox" value="GrindingR" id="GrindingR" />
                             <label class="form-check-label" for="GrindingR">Grinding</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="PoppingR" id="PoppingR" />
+                            <input class="form-check-input required_field" type="checkbox" value="PoppingR" id="PoppingR" />
                             <label class="form-check-label" for="PoppingR">Popping</label>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                     <div class="col-md-12">
                         <label for=""><strong>Do you have loose ligaments or laxity in the knee that causes weakness and instability of the knee?</strong></label><br />
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="findingsCB1R" name="findingsCB1R" />
+                            <input class="form-check-input required_field" type="checkbox" id="findingsCB1R" name="findingsCB1R" />
                             <label class="form-check-label" for="findingsCB1R">Joint laxity is present causing weakness and instability of the knee.</label>
                         </div>
                     </div>
@@ -288,7 +288,7 @@
                     <div class="col-md-12">
                         <label for=""><strong>Do you feel like you can move around freely but function of the knee is limited because of weakness?</strong></label><br />
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="findingsCB2R" name="findingsCB2R" />
+                            <input class="form-check-input required_field" type="checkbox" id="findingsCB2R" name="findingsCB2R" />
                             <label class="form-check-label" for="findingsCB2R">Patient is ambulatory but functionally limited due to weakness of knee.</label>
                         </div>
                     </div>
@@ -298,7 +298,7 @@
                     <div class="col-md-12">
                         <label for=""><strong>Do you feel like when you stand on your knee that your at high risk of falling down?</strong></label><br />
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="findingsCB3R" name="findingsCB3R" />
+                            <input class="form-check-input required_field" type="checkbox" id="findingsCB3R" name="findingsCB3R" />
                             <label class="form-check-label" for="findingsCB3R">Patient is a high fall risk due to knee instability.</label>
                         </div>
                     </div>
@@ -308,7 +308,7 @@
                     <div class="col-md-12">
                         <label for=""><strong>Is your knee tender and soft to the touch or visibly present when looking at the knee(s)?</strong></label><br />
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="findingsCB4R" name="findingsCB4R" />
+                            <input class="form-check-input required_field" type="checkbox" id="findingsCB4R" name="findingsCB4R" />
                             <label class="form-check-label" for="findingsCB4R">Knee is tender and soft tissue swelling is present.</label>
                         </div>
                     </div>
@@ -318,7 +318,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="KneeLcodeRPCC">DME</label>
-                            <select name="KneeLcodeRPCC" id="KneeLcodeRPCC" class="custom-select" required="required">
+                            <select name="KneeLcodeRPCC" id="KneeLcodeRPCC" class="custom-select required_field">
                                 <option value="">Choose...</option>
                                 <option value="L0457">L0457</option>
                                 <option value="L0637">L0637</option>
@@ -332,7 +332,7 @@
                     <div class="col-md-12">
                         <div class="form-group" style="position:relative;">
                             <label for="RightKneePharmPrescriptionNumber">Pharmacy</label>
-                            <select class="choices-multiple" multiple name="RightKneePharmPrescriptionNumber" id="RightKneePharmPrescriptionNumber">
+                            <select class="choices-multiple required_field" multiple name="RightKneePharmPrescriptionNumber" id="RightKneePharmPrescriptionNumber">
                                 <option value="0" prescription="Not Covered/Not Available"></option>
                                 <option value="83" prescription="PLIAGLIS 7-7% EXTERNAL CREAM">Apply 1gm topically to affected area(s) up to 4 times daily. Peel off
                                     after waiting the required application time as directed. (Max application time of 60 min) - 120 grams</option>

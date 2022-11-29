@@ -1,4 +1,4 @@
-<div id="section-back-pain" class="row pb-5" style="display:none">
+<div id="section-back-pain" class="row pb-5" style="display:none;">
     <div class="col-md-12">
         <h4 class="section-title row pb-3 pl-2">Back Exam Questions</h4>
         <div class="card">
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <select name="ratingBP" id="ratingBP" class="custom-select back_valid" db-table="prod_back" required="required">
+                            <select name="ratingBP" id="ratingBP" class="custom-select required_field">
                                 <option value="">Choose...</option>
                                 <option value="1 (Mild)">1 (Mild)</option>
                                 <option value="2 (Mild)">2 (Mild)</option>
@@ -31,11 +31,12 @@
                                 <option value="9 (Severe)">9 (Severe)</option>
                                 <option value="10 (Severe)">10 (Severe)</option>
                             </select>
+                            <div class="invalid-feedback">Looks good!</div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <select name="locationBP" id="locationBP" size="1" class="custom-select back_valid" db-table="prod_back" required="required">
+                            <select name="locationBP" id="locationBP" size="1" class="custom-select required_field">
                                 <option value="">Choose...</option>
                                 <option value="Lower Lumbar">Lower Lumbar</option>
                                 <option value="Thoracic Lumbar">Thoracic Lumbar</option>
@@ -44,7 +45,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <select class="custom-select back_valid" db-table="prod_back" name="persistedBP" id="persistedBP" required="required">
+                            <select class="custom-select required_field" name="persistedBP" id="persistedBP">
                                 <option value="">Choose...</option>
                                 <option value="0-1 year">0-1 year</option>
                                 <option value="1-2 years">1-2 years</option>
@@ -62,35 +63,56 @@
                             <label class="fw-bold" for="">Do you know what is the cause of the pain?</label>
                             <span style="display: block; font-size:12px">Please specify 'In Detail' the cause of patient's pain (one word
                                 descriptions are not adequate, enter a narrative statement of the issues causing pain if possible)</span>
-                            <textarea class="form-control" name="causeBP" id="" cols="30" rows="10"></textarea>
+                            <textarea class="form-control required_field" name="causeBP" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="row pb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Was there an Injury related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjuryBP" id="patientInjuryBP_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjuryBP" id="patientInjuryBP_yes" value="Yes" />
                             <label class="form-check-label" for="patientInjuryBP_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="patientInjuryBP" id="patientInjuryBP_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="patientInjuryBP" id="patientInjuryBP_no" value="No" />
                             <label class="form-check-label" for="patientInjuryBP_no">No</label>
                         </div>
+                    </div>
+                    <div class="col-md-6 patientInjuryBP_details" style="position:relative; display:none;">
+                        <div class="form-group">
+                            <label for="dateofInjuryBP">If Yes, when was the Injury?</label>
+                            <input type="text" name="dateofInjuryBP" id="dateofInjuryBP" value="" placeholder="mm-dd-yy"
+                                class="form-control required_field datepicker">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pb-3 patientInjuryBP_details" style="display:none;">
+                    <div class="col-md-12">
+                        <label for="detailInjury">If Yes, what were the details of the injury?</label>
+                        <textarea value="" name="detailInjury" id="detailInjury" data-gramm="false" wt-ignore-input="true"
+                            class="form-control required_field"></textarea>
                     </div>
                 </div>
 
                 <div class="row pb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Was there an Surgery related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgeryBP" id="surgeryBP_yes" value="Yes" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgeryBP" id="surgeryBP_yes" value="Yes" />
                             <label class="form-check-label" for="surgeryBP_yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="surgeryBP" id="surgeryBP_no" value="No" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="surgeryBP" id="surgeryBP_no" value="No" />
                             <label class="form-check-label" for="surgeryBP_no">No</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 surgeryBP_details" style="position:relative; display:none;">
+                        <div class="form-group">
+                            <label for="dateofsurgeryBP">If Yes, when was the surgery?</label>
+                            <input type="text" name="dateofsurgeryBP" id="dateofsurgeryBP" value="" placeholder="mm-dd-yy"
+                                class="form-control required_field datepicker">
                         </div>
                     </div>
                 </div>
@@ -99,11 +121,11 @@
                     <div class="col-md-12">
                         <label for="">Is the pain Constant or does it Comes and go?</label><br />
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencyBP" id="frequencyBP_yes" value="constant" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencyBP" id="frequencyBP_yes" value="constant" />
                             <label class="form-check-label" for="frequencyBP_yes">constant</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="frequencyBP" id="frequencyBP_no" value="intermittent" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="frequencyBP" id="frequencyBP_no" value="intermittent" />
                             <label class="form-check-label" for="frequencyBP_no">intermittent</label>
                         </div>
                     </div>
@@ -113,7 +135,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ptName">What aggravates the pain? Bending, Walking, standing, Lifting?</label>
-                            <select name="aggravatesBP[]" class="choices-multiple" placeholder="Can select multiple pains" multiple>
+                            <select name="aggravatesBP[]" class="choices-multiple required_field" placeholder="Can select multiple pains" multiple>
                                 <option value="Bending">Bending</option>
                                 <option value="Standing">Standing</option>
                                 <option value="Walking">Walking</option>
@@ -129,7 +151,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="painIncreases">Does the pain increase while bending forward or leaning back?</label>
-                            <select id="painIncreases" name="painIncreases" class="custom-select">
+                            <select id="painIncreases" name="painIncreases" class="custom-select required_field">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
@@ -141,7 +163,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="painIncreasesleft">Does the pain increase while leaning to the LEFT?</label>
-                            <select id="painIncreasesleft" name="painIncreasesleft" class="custom-select">
+                            <select id="painIncreasesleft" name="painIncreasesleft" class="custom-select required_field">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
@@ -153,7 +175,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="painIncreasesright">Does the pain increase while leaning to the RIGHT?</label>
-                            <select id="painIncreasesright" name="painIncreasesright" class="custom-select">
+                            <select id="painIncreasesright" name="painIncreasesright" class="custom-select required_field">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
@@ -165,7 +187,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ptName">What treatments have you tried to alleviate the pain?</label>
-                            <select name="treatmentsBP[]" class="choices-multiple" placeholder="Can select multiple pain treatments" multiple>
+                            <select name="treatmentsBP[]" class="choices-multiple required_field" placeholder="Can select multiple pain treatments" multiple>
                                 <option value="Over the counter medication">Over the counter medication</option>
                                 <option value="Prescription medication">Prescription medication</option>
                                 <option value="Physical therapy">Physical therapy</option>
@@ -200,31 +222,31 @@
                     <div class="col-md-12">
                         <label for="">Waist Size</label><br />
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_small" value="Small(26'' to 34'')" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_small" value="Small(26'' to 34'')" />
                             <label class="form-check-label" for="waist_small">Small(26'' to 34'')</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_medium" value="Medium(33'' to 42'')" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_medium" value="Medium(33'' to 42'')" />
                             <label class="form-check-label" for="waist_medium">Medium(33'' to 42'')</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_large" value="Large(41'' to 51'')" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_large" value="Large(41'' to 51'')" />
                             <label class="form-check-label" for="waist_large">Large(41'' to 51'')</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_xl" value="X-Large(50'' to 60'')" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_xl" value="X-Large(50'' to 60'')" />
                             <label class="form-check-label" for="waist_xl">X-Large(50'' to 60'')</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_xxl" value="XX-Large(60'' to 70'')" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_xxl" value="XX-Large(60'' to 70'')" />
                             <label class="form-check-label" for="waist_xxl">XX-Large(60'' to 70'')</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_xxxl" value="XXXL" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_xxxl" value="XXXL" />
                             <label class="form-check-label" for="waist_xxxl">XXXL</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="waistSize" id="waist_xxxxl" value="XXXXL" required="required" />
+                            <input class="form-check-input required_field" type="radio" name="waistSize" id="waist_xxxxl" value="XXXXL" />
                             <label class="form-check-label" for="waist_xxxxl">XXXXL</label>
                         </div>
                     </div>
@@ -239,7 +261,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="BackLcodePCC">DME</label>
-                            <select name="BackLcodePCC" id="BackLcodePCC" class="custom-select" required="required">
+                            <select name="BackLcodePCC" id="BackLcodePCC" class="custom-select required_field">
                                 <option value="">Choose...</option>
                                 <option value="L0457">L0457</option>
                                 <option value="L0637">L0637</option>
@@ -253,7 +275,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="BackPharmPrescriptionNumber">Pharmacy</label>
-                            <select class="choices-multiple" multiple name="BackPharmPrescriptionNumber" id="BackPharmPrescriptionNumber">
+                            <select class="choices-multiple required_field" multiple name="BackPharmPrescriptionNumber" id="BackPharmPrescriptionNumber">
                                 <option value="0" prescription="Not Covered/Not Available"></option>
                                 <option value="83" prescription="PLIAGLIS 7-7% EXTERNAL CREAM"> - Apply 1gm topically to affected area(s) up to 4 times daily. Peel off
                                     after waiting the required application time as directed. (Max application time of 60 min) - 120 grams</option>

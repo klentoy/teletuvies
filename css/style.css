@@ -623,3 +623,22 @@ input.choices__input.choices__input--cloned {
 div#patients-table_info {
   padding-top: 21px;
 }
+
+#choices-multiple-remove-button {
+  opacity: 0 !important;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.focus-field{ 
+  box-shadow: 0px 0px 4px #eb2424;
+}
+
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom{
+  margin-top: 85px;
+}
+.datepicker.datepicker-dropdown.dropdown-menu{
+  margin-top: 65px;
+}
