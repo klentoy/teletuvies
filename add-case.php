@@ -128,94 +128,31 @@
                         <!-- #section-right-ankle-pain -->
 
                         <!-- #section-left-wrist-pain -->
-                        <div id="section-left-wrist-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Left Wrist Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Left Wrist here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/left-wrist-pain.php'; ?>
                         <!-- #section-left-wrist-pain -->
 
                         <!-- #section-right-wrist-pain -->
-                        <div id="section-right-wrist-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Right Wrist Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Right Wrist here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/right-wrist-pain.php'; ?>
                         <!-- #section-right-wrist-pain -->
 
                         <!-- #section-left-elbow-pain -->
-                        <div id="section-left-elbow-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Left Elbow Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Left Elbow here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/left-elbow-pain.php'; ?>
                         <!-- #section-left-elbow-pain -->
 
                         <!-- #section-right-elbow-pain -->
-                        <div id="section-right-elbow-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Right Elbow Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Right Elbow here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/right-elbow-pain.php'; ?>
                         <!-- #section-right-elbow-pain -->
 
                         <!-- #section-left-hip-pain -->
-                        <div id="section-left-hip-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Left Hip Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Left Hip here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/left-hip-pain.php'; ?>
                         <!-- #section-left-hip-pain -->
 
                         <!-- #section-right-hip-pain -->
-                        <div id="section-right-hip-pain" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">Right Hip Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        Right Hip here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/right-hip-pain.php'; ?>
                         <!-- #section-right-hip-pain -->
 
                         <!-- #section-cgm -->
-                        <div id="section-cgm" class="row pb-5" style="display:none" ;>
-                            <div class="col-md-12">
-                                <h4 class="section-title row pb-3 pl-2">CGM Exam Questions</h4>
-                                <div class="card">
-                                    <div class="card-body">
-                                        CGM here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php include 'pain-sections/cgm.php'; ?>
                         <!-- #section-cgm -->
 
                         <div class="row">
@@ -264,7 +201,7 @@
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <!-- Your custom scripts (optional) -->

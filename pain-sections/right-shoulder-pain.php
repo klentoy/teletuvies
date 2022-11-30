@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div> <!-- .row -->
-                <div class="row">
+                <div class="row pb-3">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="fw-bold" for="causeSPR">Do you know what is the cause of the pain?</label>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="row pb-3">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="">Was there an Injury related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
                             <input class="form-check-input required_field" type="radio" name="patientInjurySPR" id="patientInjurySPR_yes" value="Yes" />
@@ -67,9 +67,25 @@
                             <label class="form-check-label" for="patientInjurySPR_no">No</label>
                         </div>
                     </div>
+                    <div class="col-md-6 patientInjurySPR_details" style="position:relative; display:none;">
+                        <div class="form-group">
+                            <label for="dateofInjurySPR">If Yes, when was the Injury?</label>
+                            <input type="text" name="dateofInjurySPR" id="dateofInjurySPR" value="" placeholder="mm-dd-yy"
+                                class="form-control required_field datepicker">
+                        </div>
+                    </div>
                 </div>
-                <div class="row pb-3">
+                <div class="row pb-3 patientInjurySPR_details" style="display:none;">
                     <div class="col-md-12">
+                        <label for="injurySPR">If Yes, what were the details of the injury?</label>
+                        <textarea value="" name="injurySPR" id="injurySPR" data-gramm="false" wt-ignore-input="true"
+                            class="form-control required_field"></textarea>
+                    </div>
+                </div>
+
+                
+                <div class="row pb-3">
+                    <div class="col-md-6">
                         <label for="">Was there an Surgery related to the cause of the pain?</label><br />
                         <div class="form-check form-check-inline">
                             <input class="form-check-input required_field" type="radio" name="surgerySPR" id="surgerySPR_yes" value="Yes" />
@@ -80,7 +96,16 @@
                             <label class="form-check-label" for="surgerySPR_no">No</label>
                         </div>
                     </div>
+                    <div class="col-md-6 surgerySPR_details" style="position:relative; display:none;">
+                        <div class="form-group">
+                            <label for="dateofsurgerySPR">If Yes, when was the surgery?</label>
+                            <input type="text" name="dateofsurgerySPR" id="dateofsurgerySPR" value="" placeholder="mm-dd-yy"
+                                class="form-control required_field datepicker">
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="row pb-3">
                     <div class="col-md-12">
                         <label for="">Is the pain Constant or does it Comes and go?</label><br />

@@ -14,10 +14,6 @@ $(document).ready(function () {
     });
     $('.dataTables_length').addClass('bs-select');
 
-    $('.datepicker').datepicker({
-        format: "mm-dd-yy"
-    });
-
     load_patient_table();
 
     patients_insurance_form();
@@ -246,11 +242,15 @@ function getPatients() {
 }
 
 function multiSelectPharmFormat(el) {
-    if (!el.id) { return el.text; }
-    var $state = $(
-        '<span><strong>' + $(el.element).attr('prescription') + '</strong> ' + el.text + '</span>'
-    );
-    return $state;
+    if ($(el.element).attr('prescription')) {
+        if (!el.id) { return el.text; }
+        var $state = $(
+            '<span><strong>' + $(el.element).attr('prescription') + '</strong> ' + el.text + '</span>'
+        );
+        return $state;
+    } else {
+        return el.text;
+    }
 }
 
 function addCaseFuncs() {
@@ -264,6 +264,7 @@ function addCaseFuncs() {
             shouldSort: false,
             allowHTML: true,
         });*/
+
 
         $('.choices-multiple').select2({
             width: "100%",
@@ -279,6 +280,11 @@ function addCaseFuncs() {
                 // questions_sections("value of dropdown", "show section to the page; true|false")
                 questions_sections(event.detail.label, true);
                 add_field_requirement();
+
+
+                $('.datepicker').datepicker({
+                    format: "mm-dd-yy"
+                });
             },
             false,
         );
@@ -336,17 +342,32 @@ function consult_form() {
         }
     });
 
-    $('.required_field:radio').click(function(){
+    $('.required_field:radio').click(function () {
         var fieldValue = $(this).val();
         var fieldName = $(this).attr("name");
-        if ( fieldValue == "Yes" ){
+        if (fieldValue == "Yes") {
             $('.' + fieldName + '_details').fadeIn();
             add_field_requirement();
-        }else{
+        } else {
             $('.' + fieldName + '_details').fadeOut();
             remove_field_requirement();
         }
-        
+
+    });
+
+    $('#cgmMultiDailyInjections').change(function () {
+        if ($(this).is(':checked')) {
+            $('#cgmMultiDailyInjectionsPerDay').prop('disabled', false).attr('required', true);
+        }else{
+            $('#cgmMultiDailyInjectionsPerDay').prop('disabled', true).attr('required', false);
+        }
+    });
+    $('#cgmOther').change(function () {
+        if ($(this).is(':checked')) {
+            $('#cgmOtherText').prop('disabled', false).attr('required', true);
+        }else{
+            $('#cgmOtherText').prop('disabled', true).attr('required', false).val('');
+        }
     });
 
 }
