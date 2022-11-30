@@ -1,9 +1,10 @@
 <?php
+// PLEASE NOTE THAT THIS IS JUST A TEST/MOCK API FOR DATA POPULATION.
+
 
 if (isset($_GET['action']) && ($_GET['action'] == "_get_patients")) {
   get_patient();
 }
-
 
 function get_patient() {
   $curl = curl_init();
@@ -32,6 +33,41 @@ function get_patient() {
   curl_close($curl);
   echo $response;
 }
+
+if (isset($_GET['action']) && ($_GET['action'] == "_get_consults")) {
+  get_consults();
+}
+
+function get_consults(){
+  $curl = curl_init();
+
+  $start = isset($_GET['start']) ? $_GET['start'] : 0;
+  $len = isset($_GET['length']) ? $_GET['length'] : 0;
+
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => 'https://new.unimedrx.com/crm/common/cases_dtserverside.php',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS => 'start='.$start .'&length='.$len,
+    CURLOPT_HTTPHEADER => array(
+      'content-type: application/x-www-form-urlencoded; charset=UTF-8',
+      'cookie: PHPSESSID=d0103239bfd70cf11c5da257caf50db3; ; PHPSESSID=bf4f8c80ed5198d0586e09573885db5d',
+    ),
+  ));
+
+  $response = curl_exec($curl);
+
+  curl_close($curl);
+  echo $response;
+
+}
+
+
 
 
 if (isset($_GET['action']) && ($_GET['action'] == "_get_patient_name")) {
@@ -112,10 +148,8 @@ function headersToArray( $str )
     $headersTmpArray = explode( "\r\n" , $str );
     for ( $i = 0 ; $i < count( $headersTmpArray ) ; ++$i )
     {
-        // we dont care about the two \r\n lines at the end of the headers
         if ( strlen( $headersTmpArray[$i] ) > 0 )
         {
-            // the headers start with HTTP status codes, which do not contain a colon so we can filter them out too
             if ( strpos( $headersTmpArray[$i] , ":" ) )
             {
                 $headerName = substr( $headersTmpArray[$i] , 0 , strpos( $headersTmpArray[$i] , ":" ) );

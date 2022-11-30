@@ -44,13 +44,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table id="patients-table" class="table">
+                        <table id="consults-table" class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">ACTION</th>
-                                    <th scope="col">ID</th>
+                                    <th scope="col">CONSULT ID</th> 
                                     <th scope="col">NAME</th>
-                                    <th scope="col">State</th>
+                                    <th scope="col">STATE</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">COMPLAINTS</th>
+                                    <th scope="col">DATE SUBMITTED</th>
+                                    <th scope="col">SUBMITTED BY</th>
+                                    <th scope="col">SUPPLIER CODE</th>
                                 </tr>
                             </thead>
                         </table>

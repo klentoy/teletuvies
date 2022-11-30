@@ -16,13 +16,17 @@ $(document).ready(function () {
 
     load_patient_table();
 
+    load_consults_table();
+
     patients_insurance_form();
 
     patients_secondary_insurance_form();
 
     getPatients();
 
-    addCaseFuncs();
+    if ($('#choices-multiple-remove-button').length > 0) {
+        addCaseFuncs();
+    }
 
     consult_form();
 });
@@ -52,25 +56,70 @@ function load_patient_table() {
                 data.filter_state = filter_state;
             }
         },
-        columns: [{
-            "data": "Active",
-            render: function (data, type, full) {
-                return '<a href="update-patient.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Update</a>' +
-                    '<a href="create-consult.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Create a Consult</a>';
-            }
-        },
-        {
-            "data": "userId"
-        },
-        {
-            "data": "Name"
-        },
-        {
-            "data": "State"
-        },
+        columns: [
+            {
+                "data": "Active",
+                render: function (data, type, full) {
+                    return '<a href="update-patient.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Update</a>' +
+                        '<a href="create-consult.php?user_id=' + full.userId + '" type="button" class="btn btn-link">Create a Consult</a>';
+                }
+            },
+            {
+                "data": "userId"
+            },
+            {
+                "data": "Name"
+            },
+            {
+                "data": "State"
+            },
         ],
         "order": [
             [1, "desc"]
+        ],
+
+    });
+}
+
+function load_consults_table() {
+    $('#consults-table').DataTable({
+        paging: true,
+        language: {
+            searchPlaceholder: "Search",
+            search: "",
+            loadingRecords: '&nbsp;',
+            processing: "<span class='fa-stack fa-lg'>\n\
+        <i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i>\n\
+   </span>&emsp;Processing ...",
+        },
+        processing: true,
+        serverSide: true,
+        loading: true,
+        ajax: {
+            'url': window.location.protocol + "//" + window.location.host + "/api_grab.php",
+            'type': 'GET',
+            'data': function (data) {
+                var filter_state = $('input:checkbox[name="state"]:checked').map(function () {
+                    return this.value;
+                }).get().join('|');
+                data.action = '_get_consults';
+            }
+        },
+        "columns": [
+            { "data": "action" },
+            { "data": "visit_id" },
+            { "data": "ptName" },
+            { "data": "state" },
+            { "data": "status" },
+            { "data": "chiefComplaints" },
+            { "data": "c_createdAt" },
+            { "data": "agentUserName", "render": function(data, type, row) {
+                if(data) {
+                    return data;
+                }
+                return row.afMarketerUserName;
+            } },
+            { "data": "c_supplierCode" },
         ],
 
     });
@@ -265,12 +314,13 @@ function addCaseFuncs() {
             allowHTML: true,
         });*/
 
-
-        $('.choices-multiple').select2({
-            width: "100%",
-            templateResult: multiSelectPharmFormat,
-            templateSelection: multiSelectPharmFormat
-        });
+        if ($('.choices-multiple').length > 0) {
+            $('.choices-multiple').select2({
+                width: "100%",
+                templateResult: multiSelectPharmFormat,
+                templateSelection: multiSelectPharmFormat
+            });
+        }
 
         var questions = [];
 
@@ -358,14 +408,14 @@ function consult_form() {
     $('#cgmMultiDailyInjections').change(function () {
         if ($(this).is(':checked')) {
             $('#cgmMultiDailyInjectionsPerDay').prop('disabled', false).attr('required', true);
-        }else{
+        } else {
             $('#cgmMultiDailyInjectionsPerDay').prop('disabled', true).attr('required', false);
         }
     });
     $('#cgmOther').change(function () {
         if ($(this).is(':checked')) {
             $('#cgmOtherText').prop('disabled', false).attr('required', true);
-        }else{
+        } else {
             $('#cgmOtherText').prop('disabled', true).attr('required', false).val('');
         }
     });
