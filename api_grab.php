@@ -24,7 +24,7 @@ function get_patient() {
     CURLOPT_POSTFIELDS => 'start='.$start .'&length='.$len,
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/x-www-form-urlencoded',
-      'Cookie: PHPSESSID=a1ad70678a4c85365a53065d2cc98aeb'
+      'Cookie: PHPSESSID=bc8a67ca40ddc4c5da90db40ac1ea6d3'
     ),
   ));
   
@@ -56,7 +56,7 @@ function get_consults(){
     CURLOPT_POSTFIELDS => 'start='.$start .'&length='.$len,
     CURLOPT_HTTPHEADER => array(
       'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-      'cookie: PHPSESSID=d0103239bfd70cf11c5da257caf50db3; ; PHPSESSID=bf4f8c80ed5198d0586e09573885db5d',
+      'Cookie: PHPSESSID=3a19091db272b4001f445aa1114f3a98'
     ),
   ));
 
@@ -66,8 +66,6 @@ function get_consults(){
   echo $response;
 
 }
-
-
 
 
 if (isset($_GET['action']) && ($_GET['action'] == "_get_patient_name")) {
@@ -129,16 +127,21 @@ function get_session_id () {
     
   ));
 
-  $response = curl_exec($curl);
+  curl_exec($curl);
 
-  $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
-  $header = substr($response, 0, $header_size);
-  $body = substr($response, $header_size);
+  curl_setopt($curl, CURLOPT_URL, "https://new.unimedrx.com/crm/MSO/cases.php");
+  //do stuff with the info with DomDocument() etc
+  $html = curl_exec($curl);
+
+  echo $html;
+  // $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+  // $header = substr($html, 0, $header_size);
+  // $body = substr($html, $header_size);
 
 
-  curl_close($curl);
-  $get_session_id = headersToArray($header)['Set-Cookie'];
-  echo preg_replace("/.*PHPSESSID=([^;]*);.*/", "\\1", $get_session_id);
+  // curl_close($curl);
+  // $get_session_id = headersToArray($header)['Set-Cookie'];
+  // echo preg_replace("/.*PHPSESSID=([^;]*);.*/", "\\1", $get_session_id);
 
 }   
 

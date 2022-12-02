@@ -92,11 +92,11 @@ function load_consults_table() {
         <i class='fa fa-spinner fa-spin fa-stack-2x fa-fw'></i>\n\
    </span>&emsp;Processing ...",
         },
-        processing: true,
-        serverSide: true,
+        // processing: true,
+        // serverSide: true,
         loading: true,
         ajax: {
-            'url': window.location.protocol + "//" + window.location.host + "/api_grab.php",
+            'url': window.location.protocol + "//" + window.location.host + "/mock_data/consults.json",
             'type': 'GET',
             'data': function (data) {
                 var filter_state = $('input:checkbox[name="state"]:checked').map(function () {
@@ -111,7 +111,13 @@ function load_consults_table() {
             { "data": "ptName" },
             { "data": "state" },
             { "data": "status" },
-            { "data": "chiefComplaints" },
+            {   
+                "data": "chiefComplaints",
+                render: function(d,t,f){
+                    return santize_complaints(f.chiefComplaints);
+                    // return d;
+                }
+            },
             { "data": "c_createdAt" },
             { "data": "agentUserName", "render": function(data, type, row) {
                 if(data) {
@@ -123,6 +129,26 @@ function load_consults_table() {
         ],
 
     });
+}
+
+function santize_complaints(str){
+    var c = str.replace(/(<([^>]+)>)/gi, '|');
+    c = c.split("|");
+    var filtered_c = c.filter(n => n);
+    // console. log(filtered_c);
+
+    var chip_it = "";
+    filtered_c.forEach(element => {
+        if ( element.includes(';') ){
+            element = element.split(';');
+            element.forEach(e => {
+                chip_it += '<span class="badge rounded-pill badge-secondary" style="margin-right:1px;">' + e + '</span>';
+            });
+        }else{
+            chip_it += '<span class="badge rounded-pill badge-secondary" style="margin-right:1px;">' + element + '</span>';
+        }
+    });
+    return chip_it;
 }
 
 function patients_insurance_form() {
