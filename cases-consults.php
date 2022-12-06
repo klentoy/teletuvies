@@ -72,7 +72,13 @@
     <!-- jQuery -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
-    <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+    <!-- DataTable -->
+    <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
+
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
@@ -88,6 +94,7 @@
     <script type="text/javascript" src="js/custom.js"></script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0 "></script>
 
     <script>

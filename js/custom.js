@@ -105,7 +105,16 @@ function load_consults_table() {
                 data.action = '_get_consults';
             }
         },
-        "columns": [
+        dom: "<'row'<'col-sm-12 col-md-6 header-actions'lB><'col-sm-12 col-md-6'f>>" +
+        "<'row'<'col-sm-12'tr>>" +
+        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        buttons: [
+            {
+                extend: 'colvis',
+                // postfixButtons: ['colvisRestore'],
+            }
+        ],
+        columns: [
             { "data": "action" },
             { "data": "visit_id" },
             { "data": "ptName" },
@@ -303,16 +312,19 @@ function getPatients() {
         data.forEach(e => {
             patient_obj[e.label] = e.value
         });
-        $('#ptName').autocomplete({
-            source: patient_obj,
-            onSelectItem: function (selected, val) {
-                $('#ptName').dropdown('hide');
-                console.log(selected.value)
-                $('#ptUserId').val(selected.value);
-            },
-            dropdownOptions: function () {
-            }
-        })
+
+        if (  $('#ptName').length > 0 ){
+            $('#ptName').autocomplete({
+                source: patient_obj,
+                onSelectItem: function (selected, val) {
+                    $('#ptName').dropdown('hide');
+                    console.log(selected.value)
+                    $('#ptUserId').val(selected.value);
+                },
+                dropdownOptions: function () {
+                }
+            })
+        }
     });
 }
 
