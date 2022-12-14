@@ -46,7 +46,7 @@ function load_patient_table() {
         serverSide: true,
         loading: true,
         ajax: {
-            'url': window.location.protocol + "//" + window.location.host + "/api_grab.php",
+            'url': window.location.protocol + "//" + window.location.host + "/frontend/api_grab.php",
             'type': 'GET',
             'data': function (data) {
                 var filter_state = $('input:checkbox[name="state"]:checked').map(function () {
@@ -94,9 +94,11 @@ function load_consults_table() {
         },
         // processing: true,
         // serverSide: true,
+
+        order: [[ 8, "desc" ]], //or asc 
         loading: true,
         ajax: {
-            'url': window.location.protocol + "//" + window.location.host + "/mock_data/consults.json",
+            'url': window.location.protocol + "//" + window.location.host + "/frontend/mock-data/consults.json",
             'type': 'GET',
             'data': function (data) {
                 var filter_state = $('input:checkbox[name="state"]:checked').map(function () {
@@ -106,8 +108,8 @@ function load_consults_table() {
             }
         },
         dom: "<'row'<'col-sm-12 col-md-6 header-actions'lB><'col-sm-12 col-md-6'f>>" +
-        "<'row'<'col-sm-12'tr>>" +
-        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
         buttons: [
             {
                 extend: 'colvis',
@@ -115,45 +117,76 @@ function load_consults_table() {
             }
         ],
         columns: [
-            { "data": "action" },
+            {
+                "data": "action",
+                render: function (d, t, f) {
+                    var doc = document.createElement("html");
+                    doc.innerHTML = f.action;
+                    var links = doc.getElementsByTagName("a")
+                    var urls = [];
+
+                    var link = undefined;
+                    var action_buttons = '<ul class="action-links">';
+                    for (var i = 0; i < links.length; i++) {
+                        link = links[i];
+                        if ( link.getAttribute("href") ){
+                            var fileName = link.getAttribute("href").split('.php');
+                            if ( fileName[0] == 'viewCase' ){
+                                action_buttons += '<li><a href="">View</a></li>';
+                            }else if ( fileName[0] == 'cloneCase' ){
+                                action_buttons += '<li><a href="">Recreate</a></li>';
+                            }else if ( link.getAttribute("onclick").indexOf("sendPingMessageToProviders") >= 0 ){
+                                action_buttons += '<li><a href="">Contact Provider</a></li>';
+                            }
+                        }else{
+                            if ( link.getAttribute("onclick") ){
+                                action_buttons += '<li><a href="#" >View Call Logs</a></li>';
+                            }
+                        }
+                        // urls.push(links[i].getAttribute("href"));
+                    }
+                    action_buttons += '</ul>';
+                    return action_buttons;
+                }
+            },
             { "data": "visit_id" },
             { "data": "ptName" },
             { "data": "state" },
             { "data": "status" },
-            {   
+            {
                 "data": "chiefComplaints",
-                render: function(d,t,f){
+                render: function (d, t, f) {
                     return santize_complaints(f.chiefComplaints);
-                    // return d;
                 }
             },
             { "data": "c_createdAt" },
-            { "data": "agentUserName", "render": function(data, type, row) {
-                if(data) {
-                    return data;
+            {
+                "data": "agentUserName", "render": function (data, type, row) {
+                    if (data) {
+                        return data;
+                    }
+                    return row.afMarketerUserName;
                 }
-                return row.afMarketerUserName;
-            } },
+            },
             { "data": "c_supplierCode" },
         ],
 
     });
 }
 
-function santize_complaints(str){
+function santize_complaints(str) {
     var c = str.replace(/(<([^>]+)>)/gi, '|');
     c = c.split("|");
     var filtered_c = c.filter(n => n);
-    // console. log(filtered_c);
 
     var chip_it = "";
     filtered_c.forEach(element => {
-        if ( element.includes(';') ){
+        if (element.includes(';')) {
             element = element.split(';');
             element.forEach(e => {
                 chip_it += '<span class="badge rounded-pill badge-secondary" style="margin-right:1px;">' + e + '</span>';
             });
-        }else{
+        } else {
             chip_it += '<span class="badge rounded-pill badge-secondary" style="margin-right:1px;">' + element + '</span>';
         }
     });
@@ -307,13 +340,13 @@ function toggleFieldOnBlur(thisField, secondary = false) {
 }
 
 function getPatients() {
-    $.ajax(window.location.protocol + "//" + window.location.host + '/mock_data/patients.json').then((data) => {
+    $.ajax(window.location.protocol + "//" + window.location.host + '/frontend/mock-data/patients.json').then((data) => {
         var patient_obj = {};
         data.forEach(e => {
             patient_obj[e.label] = e.value
         });
 
-        if (  $('#ptName').length > 0 ){
+        if ($('#ptName').length > 0) {
             $('#ptName').autocomplete({
                 source: patient_obj,
                 onSelectItem: function (selected, val) {

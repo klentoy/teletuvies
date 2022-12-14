@@ -9,7 +9,7 @@
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
                 <a class="text-center" href="#">
-                    <img src="<?php echo $root; ?>/img/top-logo-main.png" height="35" alt="TelevisitMD Logo" loading="lazy" />
+                    <img src="<?php echo $root; ?>/frontend/img/top-logo-main.png" height="35" alt="TelevisitMD Logo" loading="lazy" />
                 </a>
 
                 <h5 class="filters">FILTERS</h5>

@@ -52,7 +52,7 @@
                                     <th scope="col">NAME</th>
                                     <th scope="col">STATE</th>
                                     <th scope="col">STATUS</th>
-                                    <th scope="col">COMPLAINTS</th>
+                                    <th scope="col" width="10">COMPLAINTS</th>
                                     <th scope="col">DATE SUBMITTED</th>
                                     <th scope="col">SUBMITTED BY</th>
                                     <th scope="col">SUPPLIER CODE</th>

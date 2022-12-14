@@ -388,7 +388,7 @@ ul.states-list li {
   padding: 20px 0 0 20px;
 }
 
-#consults-table_wrapper_length label,
+#consults-table_length label,
 #patients-table_length label {
   font-size: 14px;
   border: 1px solid #ddd;
@@ -396,7 +396,7 @@ ul.states-list li {
   border-radius: 4px;
 }
 
-#consults-table_wrapper_length select,
+#consults-table_length select,
 #patients-table_length select {
   border: 0;
   font-size: 14px;
@@ -685,23 +685,69 @@ div#consults-table_info{
 	box-sizing:border-box;
 }
 
+.dt-button-collection .buttons-columnVisibility.active:before {
+	content:' ';
+	margin-top:-6px;
+	margin-left:10px;
+	border: 1px solid #427CD8;
+	border-radius:3px;
+  background-color: #427CD8;
+  height: 20px;
+  width: 20px;
+}
 .dt-button-collection .buttons-columnVisibility:before {
 	content:' ';
 	margin-top:-6px;
 	margin-left:10px;
-	border:1px solid black;
+	border: 1px solid #ddd;
 	border-radius:3px;
+  background-color: none;
+  height: 20px;
+  width: 20px;
 }
 
+
 .dt-button-collection .buttons-columnVisibility.active span:before {
-	content:'\2714';
-	margin-top:-11px;
+  font-family: 'Material Symbols Rounded';
+  content: '\e876';
+	/* content:'\2714'; */
+	margin-top:-8px;
 	margin-left:12px;
 	text-align:center;
-	text-shadow:1px 1px #DDD, -1px -1px #DDD, 1px -1px #DDD, -1px 1px #DDD;
+	/* text-shadow:1px 1px #DDD, -1px -1px #DDD, 1px -1px #DDD, -1px 1px #DDD; */
+  color: #fff;
+  font-weight: bold;
 }
 
 .dt-button-collection .buttons-columnVisibility span {
-  margin-left:20px;    
-  position: relative;
+  margin-left:20px;       
+}
+
+ul.action-links {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+}
+
+.action-links li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+button.dt-button.buttons-collection.buttons-colvis {border: 1px solid #ddd;background: transparent;font-size: 14px;border-radius: 4px;color: #4f4f4f;height: 33px;}
+
+button.dt-button.buttons-columnVisibility {
+  border: 0;
+  background: none;
+  text-align: left;
+  padding: 10px 0 0 15px;
+}
+
+.dt-button-collection > div {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+  width: 200px;
+  padding-bottom: 10px;
 }

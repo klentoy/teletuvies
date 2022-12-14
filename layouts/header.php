@@ -11,7 +11,7 @@ $root .= '://' . $_SERVER['HTTP_HOST'];
 
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                <img src="<?php echo $root; ?>/img/top-logo-main.png" height="35" alt="TelevisitMD Logo" loading="lazy" />
+                <img src="<?php echo $root; ?>/frontend/img/top-logo-main.png" height="35" alt="TelevisitMD Logo" loading="lazy" />
             </a>
             <!-- Right links -->
             <ul class="navbar-nav ms-auto d-flex flex-row">
